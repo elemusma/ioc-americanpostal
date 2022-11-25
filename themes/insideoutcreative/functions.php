@@ -5,6 +5,7 @@ wp_enqueue_style('style', get_stylesheet_uri() );
 
 wp_enqueue_style('bootstrap', get_theme_file_uri('/css/bootstrap.min.css'));
 wp_enqueue_style('body', get_theme_file_uri('/css/sections/body.css'));
+wp_enqueue_style('btn', get_theme_file_uri('/css/elements/btn.css'));
 wp_enqueue_style('nav', get_theme_file_uri('/css/sections/nav.css'));
 wp_enqueue_style('popup', get_theme_file_uri('/css/sections/popup.css'));
 wp_enqueue_style('hero', get_theme_file_uri('/css/sections/hero.css'));
@@ -29,7 +30,6 @@ wp_enqueue_style('photo-gallery', get_theme_file_uri('/css/sections/photo-galler
 wp_enqueue_style('footer', get_theme_file_uri('/css/sections/footer.css'));
 wp_enqueue_style('sidebar', get_theme_file_uri('/css/sections/sidebar.css'));
 wp_enqueue_style('social-icons', get_theme_file_uri('/css/sections/social-icons.css'));
-wp_enqueue_style('btn', get_theme_file_uri('/css/elements/btn.css'));
 // fonts
 wp_enqueue_style('fonts', get_theme_file_uri('/css/elements/fonts.css'));
 wp_enqueue_style('proxima-nova', get_theme_file_uri('/proxima-nova/proxima-nova.css'));
@@ -127,7 +127,7 @@ function smartwp_remove_wp_block_library_css(){
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 // add_filter('comment_form_default_fields', 'remove_website_field_from_comment_form');
 function remove_website_field_from_comment_form($fields)

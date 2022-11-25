@@ -11,14 +11,27 @@
     color: white;
 }
 
-.btn-main {
+.btn-main,
+.btn a {
     background: var(--accent-primary);
-    padding: 10px 25px;
+    padding: 15px 45px;
     transition: all .25s ease-in-out;
     text-decoration: none;
+    border-radius: 25px;
+}
+
+.btn a {
+    padding: 15px 45px !important;
+    margin-left: 25px;
+    text-shadow: none !important;
 }
 
 .btn-main:hover {
     background: var(--accent-secondary);
+    text-decoration: none;
+}
+
+.btn a:hover {
+    background: var(--accent-primary-dark);
     text-decoration: none;
 }

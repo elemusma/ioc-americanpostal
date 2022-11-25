@@ -21,20 +21,22 @@ wp_head();
 <?php
 if(get_field('body','options')) { the_field('body','options'); }
 echo '<div class="blank-space"></div>';
-echo '<header class="position-relative pt-3 pb-3 z-3 box-shadow bg-white w-100" style="top:0;left:0;">';
+echo '<header class="position-relative z-3 box-shadow bg-white w-100" style="top:0;left:0;">';
 
 echo '<div class="nav">';
-echo '<div class="container">';
-echo '<div class="row align-items-center">';
-echo '<div class="col-lg-3 col-md-6">';
+echo '<div class="container-fluid">';
+echo '<div class="row">';
+echo '<div class="col-lg-3 col-md-6 text-center p-3">';
+
 echo '<a href="' . home_url() . '">';
 
 $logo = get_field('logo','options'); 
 if($logo){
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto']); 
+echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:150px;']); 
 }
 
 echo '</a>';
+
 echo '</div>';
 echo '<div class="col-lg-4 col-6 desktop-hidden">';
 echo '<a id="navToggle" class="nav-toggle">';
@@ -46,13 +48,17 @@ echo '</div>';
 echo '</a>';
 echo '</div>';
 
-echo '<div class="col-lg-4 col-6">';
+echo '<div class="col-lg-9 col-6 pt-3 pb-3">';
+echo '<div class="h-100 d-flex align-items-center justify-content-center">';
+echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:0;clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
+"></div>';
 
 wp_nav_menu(array(
     'menu' => 'primary',
     'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
     )); 
 
+echo '</div>';
 echo '</div>';
 
 
