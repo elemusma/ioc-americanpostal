@@ -1,0 +1,14 @@
+.icons svg {
+    height: 35px;
+    fill: white;
+}
+
+.icons {
+    background: var(--accent-primary);
+    height: 65px;
+    width: 65px;
+    margin: auto;
+    border-radius: 50%;
+    background: rgb(26, 56, 129);
+    background: radial-gradient(circle, rgba(26, 56, 129, 1) 65%, rgba(0, 18, 41, 1) 100%);
+}

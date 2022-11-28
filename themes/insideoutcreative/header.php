@@ -92,6 +92,7 @@ echo '</div>';
 echo '</header>';
 
 echo '<section class="hero position-relative">';
+
 $globalPlaceholderImg = get_field('global_placeholder_image','options');
 if(is_page()){
 if(has_post_thumbnail()){
@@ -102,22 +103,38 @@ echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-
 } else {
 echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
 }
+echo '<div class="position-absolute w-100 h-100 bg-white" style="opacity:.95;"></div>';
 
 
 if(is_front_page()) {
-echo '<div class="pt-5 pb-5 text-white text-center">';
-echo '<div class="position-relative">';
-echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
-echo '<div class="position-relative">';
+echo '<div class="text-center" style="padding:150px 0 0;">';
+// echo '<div class="position-relative">';
+// echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
+// echo '<div class="position-relative">';
 echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12">';
-echo '<h1 class="pt-3 pb-3 mb-0">' . get_the_title() . '</h1>';
+echo '<h1 class="pt-3 pb-3 mb-0" style="font-size:65px;">' . get_the_title() . '</h1>';
+
+if ( have_posts() ) : while ( have_posts() ) : the_post();
+the_content();
+endwhile;
+endif;
+
 echo '</div>';
 echo '</div>';
 echo '</div>';
-echo '</div>';
-echo '</div>';
+// echo '</div>';
+// echo '</div>';
+
+if(have_rows('image_and_icons')): while(have_rows('image_and_icons')): the_row();
+echo '<section class="pt-5 pb-5 position-relative">';
+
+$image = get_sub_field('image');
+echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 h-100 p-4']);
+
+endwhile; endif;
+
 echo '</div>';
 }
 

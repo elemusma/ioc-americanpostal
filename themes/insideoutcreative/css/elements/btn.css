@@ -18,6 +18,12 @@
     transition: all .25s ease-in-out;
     text-decoration: none;
     border-radius: 25px;
+    color: white;
+    font-family: "proxima_novabold";
+}
+
+.btn-main {
+    display: inline-block;
 }
 
 .btn a {
@@ -29,6 +35,7 @@
 .btn-main:hover {
     background: var(--accent-secondary);
     text-decoration: none;
+    color: white;
 }
 
 .btn a:hover {
