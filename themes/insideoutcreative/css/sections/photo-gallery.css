@@ -13,21 +13,26 @@ button.owl-prev {
 
 @media only screen and (min-width: 992px) {
 
-  button.owl-next,
-  button.owl-prev {
+  .arrows-center button.owl-next,
+  .arrows-center button.owl-prev {
     position: absolute;
-    top: 0%;
+    top: 50%;
   }
 
-  button.owl-prev {
-    left: 35%;
-    transform: translate(0, -90px);
+  .arrows-center button.owl-prev {
+    left: -10%;
+    transform: translate(0, -50%);
   }
 
-  button.owl-next {
-    right: 35%;
-    transform: translate(0, -90px);
+  .arrows-center button.owl-next {
+    right: -10%;
+    transform: translate(0, -50%);
   }
+}
+
+.arrows-small .owl-prev img,
+.arrows-small .owl-next img {
+  height: 45px;
 }
 
 @media only screen and (max-width:991px) {

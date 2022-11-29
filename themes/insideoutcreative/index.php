@@ -9,16 +9,6 @@ echo '<div class="row">';
 echo '<div class="col-12 pb-4">';
 echo '<h1>' . get_the_title(2889) . '</h1>';
 
-if(have_rows('blog_banner','options')): while(have_rows('blog_banner','options')): the_row();
-
-if(get_sub_field('blog_content')):
-echo '<div class="pt-4">';
-echo get_sub_field('blog_content');
-echo '</div>';
-endif;
-
-endwhile; endif;
-
 echo '</div>';
 
 if ( have_posts() ) : 

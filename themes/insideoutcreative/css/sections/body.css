@@ -2,6 +2,7 @@
   --accent-primary: #ad1e32;
   --accent-secondary: #002659;
   --accent-primary-dark: #941828;
+  --accent-dark-blue: #0d152d;
 }
 
 html {
@@ -36,6 +37,10 @@ a.bg-accent:hover {
 
 .bg-accent-secondary {
   background: var(--accent-secondary);
+}
+
+.bg-accent-dark-blue {
+  background: var(--accent-dark-blue);
 }
 
 a.bg-accent-secondary:hover {
@@ -90,20 +95,6 @@ a.bg-accent-secondary:hover {
   border: 0;
 }
 
-.border {
-  border: 3px solid white !important;
-}
-
-.border.accent {
-  border: 1px solid #1b75ba !important;
-}
-
-a.border.accent:hover {
-  background: #1b75ba;
-  color: white;
-  transition: all 0.25s ease-in-out;
-}
-
 .box-shadow {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -146,6 +137,12 @@ hr.text-white {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.35);
+}
+
+.divider {
+  border: 1px solid var(--accent-primary);
+  width: 100%;
+  margin: 20px 0;
 }
 
 /* content */

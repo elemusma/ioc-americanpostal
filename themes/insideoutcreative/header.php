@@ -106,7 +106,7 @@ echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-
 echo '<div class="position-absolute w-100 h-100 bg-white" style="opacity:.95;"></div>';
 
 
-if(is_front_page()) {
+if(is_front_page() || is_page()) {
 echo '<div class="text-center" style="padding:150px 0 0;">';
 // echo '<div class="position-relative">';
 // echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
@@ -114,7 +114,7 @@ echo '<div class="text-center" style="padding:150px 0 0;">';
 echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12">';
-echo '<h1 class="pt-3 pb-3 mb-0" style="font-size:65px;">' . get_the_title() . '</h1>';
+// echo '<h1 class="pt-3 pb-3 mb-0 text-accent-secondary text-uppercase" style="font-size:65px;">' . get_the_title() . '</h1>';
 
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 the_content();
@@ -141,12 +141,10 @@ echo '</div>';
 
 
 if(!is_front_page()) {
-echo '<div class="container pt-5 pb-5 text-white text-center">';
+echo '<div class="container pt-5 pb-5 text-center">';
 echo '<div class="row">';
 echo '<div class="col-md-12">';
-if(is_page() || !is_front_page()){
-echo '<h1 class="">' . get_the_title() . '</h1>';
-} elseif(is_single()){
+if(is_single()){
 echo '<h1 class="">' . get_single_post_title() . '</h1>';
 } elseif(is_author()){
 echo '<h1 class="">Author: ' . get_the_author() . '</h1>';
@@ -158,8 +156,7 @@ echo '<h1 class="">' . get_single_cat_title() . '</h1>';
 echo '<h1 class="">' . get_archive_title() . '</h1>';
 }
 elseif(!is_front_page() && is_home()){
-echo '<h1 class="text-shadow">The Morgan Birgé Blog</h1>';
-echo '<h2 class="text-shadow">Welcome to our little corner of the Internet. Kick your feet up and stay a while.</h2>';
+echo '<h1 class="">' . get_the_title(133) . '</h1>';
 }
 echo '</div>';
 echo '</div>';

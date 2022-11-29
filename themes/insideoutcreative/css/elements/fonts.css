@@ -6,6 +6,23 @@
   color: white;
 }
 
+h1,
+.h1 {
+  color: var(--accent-secondary);
+}
+
+h2 {
+  font-family: "proxima_novabold";
+}
+
+@media only screen and (min-width:768px) {
+
+  h1,
+  .h1 {
+    font-size: 75px;
+  }
+}
+
 .text-accent,
 a {
   color: var(--accent-primary);
@@ -23,8 +40,9 @@ a {
   color: var(--accent-primary);
 }
 
-.text-gray {
-  color: #585556;
+.text-gray,
+h2 {
+  color: #939596;
 }
 
 .text-shadow {
@@ -79,4 +97,8 @@ strong {
 
 blockquote {
   font-size: 90%;
+}
+
+.content-section p {
+  font-size: 125%;
 }
