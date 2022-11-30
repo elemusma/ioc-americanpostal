@@ -106,13 +106,13 @@ if($layout == 'Content Section'){
 
     echo '<div class="container">';
         echo '<div class="row">';
-        echo '<div class="col-lg-8">';
+        echo '<div class="col-lg-8 content-testimonials">';
             echo get_sub_field('content');
         echo '</div>';
 
         if(have_rows('testimonials')): 
             echo '<div class="col-lg-4">';
-            echo '<div class="bg-accent-secondary pt-5 pb-5 pl-3 pr-3 text-white h-100">';
+            echo '<div class="bg-accent-secondary pt-5 pb-5 pl-3 pr-3 text-white">';
             echo '<div class="testimonials-carousel owl-carousel owl-theme arrows-small">';
             while(have_rows('testimonials')): the_row();
             
@@ -212,6 +212,143 @@ if($layout == 'Content Section'){
 
 
     echo '</section>';
+    endwhile; endif;
+} elseif($layout == "Gallery"){
+    if(have_rows('gallery')): while(have_rows('gallery')): the_row();
+    $bgImg = get_sub_field('background_image');
+    $style = get_sub_field('style');
+    $classes = get_sub_field('classes');
+    $gallery = get_sub_field('inner_gallery');
+
+    if($bgImg){
+        echo '<section class="position-relative bg-accent-dark-blue bg-attachment ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        // echo '</section>';
+    } else {
+        echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="padding:150px 0;' . $style . '">';
+    }
+
+    echo '<div class="container">';
+    echo '<div class="row">';
+    echo '<div class="col-12">';
+
+    if($gallery):
+    echo '<div class="posts-carousel owl-carousel owl-theme arrows-center">';
+            foreach( $gallery as $image ): 
+                echo '<div>';
+                echo '<div class="img-hover overflow-h">';
+                echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set" data-title="' . $image['title'] . '">';
+                    echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100','style'=>'height:600px;object-fit:cover;']);
+                    echo '</a>';
+                echo '</div>';
+                echo '<div class="text-white pt-5">';
+                echo '<span class="h5">' . $image['title'] . '</span>';
+                echo '</div>';
+                echo '</div>';
+            endforeach;
+            echo '</div>';
+    endif;
+
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+
+
+    echo '</section>';
+
+    endwhile; endif;
+} elseif($layout == 'Thumbnail & Content'){
+    if(have_rows('thumbnail_content')): while(have_rows('thumbnail_content')): the_row();
+    $bgImg = get_sub_field('background_image');
+    $style = get_sub_field('style');
+    $classes = get_sub_field('classes');
+
+    if($bgImg){
+        echo '<section class="position-relative bg-attachment ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        // echo '</section>';
+    } else {
+        echo '<section class="position-relative ' . $classes . '" style="padding:150px 0;' . $style . '">';
+    }
+
+    echo '<div class="container">';
+    if(have_rows('sections')):
+        $sectionsCounter=0;
+        while(have_rows('sections')): the_row();
+        $img = get_sub_field('thumbnail');
+        $content = get_sub_field('content');
+        $sectionsCounter++;
+
+        echo '<div class="row">';
+
+        if($sectionsCounter == 1){
+        } else {
+            echo '<div class="divider mt-5 mb-5"></div>';
+        }
+            echo '<div class="col-md-2">';
+                echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-auto']);
+            echo '</div>';
+
+            echo '<div class="col-md-1"></div>';
+
+            echo '<div class="col-md-8">';
+
+            echo '<h2>' . get_sub_field('title') . '</h2>';
+
+            echo '<div style="font-size:135%;">';
+            echo $content;
+            echo '</div>';
+
+            echo '</div>';
+            
+
+            echo '</div>';
+        endwhile;
+    endif;
+    echo '</div>';
+
+
+
+    echo '</section>';
+    endwhile; endif;
+} elseif($layout == 'Team'){
+    if(have_rows('team')): while(have_rows('team')): the_row();
+
+        if(have_rows('sections')): 
+            $sectionsCounter = 0;
+            while(have_rows('sections')): the_row();
+            $sectionsCounter++;
+            $style = get_sub_field('style');
+            $classes = get_sub_field('classes');
+
+        echo '<section class="position-relative ' . $classes . '" style="padding:150px 0;' . $style . '">';
+        echo '<div class="divider"></div>';
+            echo '<div class="container">';
+            echo '<div class="row">';
+                echo '<div class="col-12">';
+                    echo get_sub_field('content');
+                echo '</div>';
+            echo '</div>';
+
+            if(have_rows('team_member')): while(have_rows('team_member')): the_row();
+                $headshot = get_sub_field('headshot');
+                    echo '<div class="col-md-3">';
+                    echo wp_get_attachment_image($headshot,'full','',['class'=>'w-100 h-100']);
+                    echo '</div>';
+                    echo '<div class="col-md-9">';
+                    echo '<span class="h2 name">' . get_sub_field('name') . '</span>';
+                    echo '<span class="h3 title">' . get_sub_field('title') . '</span>';
+                    echo '<span class="h3 email">' . get_sub_field('email') . '</span>';
+                    
+                    echo get_sub_field('content');
+                    
+                    echo '</div>';
+
+            endwhile; endif;
+
+            echo '</div>';
+        echo '</section>';
+
+        endwhile; endif;
+
     endwhile; endif;
 }
 

@@ -1,4 +1,25 @@
-@media screen and (min-width:768px){
+.content-testimonials li,
+.content-testimonials p {
+    font-size: 125%;
+}
+
+.content-testimonials li {
+    list-style-type: none;
+    position: relative;
+}
+
+.content-testimonials li:before {
+    content: "";
+    background: url('https://insideoutcreative.io/wp-content/uploads/2022/11/Checkmark-Blue.png');
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    left: -30px;
+}
+
+/* @media screen and (min-width:768px){
     .row-services-content:nth-child(odd){
         flex-direction: row-reverse;       
     }
@@ -13,7 +34,6 @@
     padding: 0 0 27px;
 }
 .about-middle {
-    /* background: rgba(95, 92, 104, .71); */
     background:white;
     padding: 1rem;
     z-index: 1;
@@ -68,7 +88,6 @@
 }
 .about-details h5 {
     color: #beb0a9;
-    /* transform: translate(105px, 0); */
     font-size: 2rem;
     width: 80%;
     font-weight: 300 !important;
@@ -102,10 +121,6 @@ justify-content: space-around;
         transform: translate(0,0);
         width:100%;
     }
-    /* .about p {
-        font-size: 1.5rem;
-        line-height: 1.5;
-    } */
     .img--main img {
         height: 100%;
     }
@@ -113,10 +128,7 @@ justify-content: space-around;
         right: 0;
     }
 }
-/* .about-details .page.details .bodoni {
-    transform: translate(5%, 10%);
-    margin-bottom:27px;
-} */
+
 .long-content.row {
     background:rgb(228, 232, 239);
     margin-top:30px !important;
@@ -126,17 +138,13 @@ justify-content: space-around;
     box-shadow:0px 20px 60px -30px #000000;
     border-style:double;
     border-color:#435368;
-    /* display:flex; */
-    /* flex-wrap:wrap; */
     align-items:center;
-    /* width:100%; */
 }
 .long-content .content{
     padding:10px 30px;
 }
 .long-content .content h6 {
     letter-spacing: 0;
-    /* border-left: 5px solid #F4AC45; */
     border-left: 5px solid #b9764c;
     padding-left: 18px;
 }
@@ -152,4 +160,4 @@ justify-content: space-around;
     .about-details h5{
         font-size:1.5rem;
     }
-}
+} */
