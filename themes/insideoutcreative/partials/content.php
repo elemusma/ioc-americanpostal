@@ -319,30 +319,45 @@ if($layout == 'Content Section'){
             $style = get_sub_field('style');
             $classes = get_sub_field('classes');
 
-        echo '<section class="position-relative ' . $classes . '" style="padding:150px 0;' . $style . '">';
-        echo '<div class="divider"></div>';
-            echo '<div class="container">';
-            echo '<div class="row">';
+        echo '<section class="position-relative ' . $classes . '" style="padding:50px 0;' . $style . '">';
+        echo '<div class="container">';
+        echo '<div class="row">';
+
+        if($sectionsCounter == 1){
+
+        } else {
+            echo '<div class="divider" style="margin-bottom:120px;"></div>';
+        }
+        // echo '<div style="margin-top:100px;"></div>';
                 echo '<div class="col-12">';
                     echo get_sub_field('content');
                 echo '</div>';
             echo '</div>';
 
-            if(have_rows('team_member')): while(have_rows('team_member')): the_row();
-                $headshot = get_sub_field('headshot');
-                    echo '<div class="col-md-3">';
-                    echo wp_get_attachment_image($headshot,'full','',['class'=>'w-100 h-100']);
-                    echo '</div>';
-                    echo '<div class="col-md-9">';
-                    echo '<span class="h2 name">' . get_sub_field('name') . '</span>';
-                    echo '<span class="h3 title">' . get_sub_field('title') . '</span>';
-                    echo '<span class="h3 email">' . get_sub_field('email') . '</span>';
-                    
-                    echo get_sub_field('content');
-                    
-                    echo '</div>';
+            if(have_rows('team_member')): 
+                while(have_rows('team_member')): the_row();
+                echo '<div class="row pt-5 pb-5">';
+                        $headshot = get_sub_field('headshot');
+                        echo '<div class="col-md-3">';
+                        echo '<div class="d-inline-block">';
+                            echo wp_get_attachment_image(384,'full','',['class'=>'position-absolute','style'=>'top:-25px;left:-9px;height:200px;width:200px;']);
+                            echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<div class="col-md-9 pt-md-0 pt-5">';
+                        echo '<span class="h5 name bold text-accent-secondary text-uppercase">' . get_sub_field('name') . '</span><br>';
+                        echo '<span class="h5 title text-uppercase">' . get_sub_field('title') . '</span><br>';
+                        echo '<a href="mailto:' . get_sub_field('email') . '" target="_blank" class="h5 email text-accent bold">' . get_sub_field('email') . '</a>';
+                        
+                        echo '<div style="color:#2b449c;">';
+                        echo get_sub_field('content');
+                        echo '</div>';
+                        
+                        echo '</div>';
+                        echo '</div>';
+                    endwhile;
 
-            endwhile; endif;
+         endif;
 
             echo '</div>';
         echo '</section>';
