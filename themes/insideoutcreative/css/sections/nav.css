@@ -32,6 +32,7 @@ ul.menu>li>a {
     font-weight: 900;
     /* font-size: 14px; */
     font-family: "proxima_novabold";
+    color: var(--accent-secondary)
 }
 
 .text-shadow.nav ul.menu>li>a {
@@ -42,6 +43,10 @@ ul.menu>li>a {
 .text-white ul.menu li a {
     color: white;
 }
+
+/* .text-accent ul.menu li a {
+    color: var(--accent-primary);
+} */
 
 .current-menu-item>a,
 .current_page_parent>a,
@@ -185,6 +190,10 @@ ul.sub-menu {
 
 ul.sub-menu li {
     white-space: nowrap;
+}
+
+ul.sub-menu li a {
+    color: var(--accent-secondary);
 }
 
 .text-white ul.sub-menu li a {

@@ -68,14 +68,14 @@ echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id
 echo '<div class="pt-5 pb-5">';
 echo '<div class="close-menu">';
 echo '<div>';
-echo '<span id="navMenuClose" class="close h1">X</span>';
+echo '<span id="navMenuClose" class="close h1 text-accent bold">X</span>';
 echo '</div>';
 echo '</div>';
 echo '<a href="' . home_url() . '">';
 
 $logo = get_field('logo','options'); 
 if($logo){
-echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
+echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:100px;']);
 }
 
 echo '</a>';
