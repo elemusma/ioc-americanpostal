@@ -68,7 +68,7 @@ echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id
 echo '<div class="pt-5 pb-5">';
 echo '<div class="close-menu">';
 echo '<div>';
-echo '<span id="navMenuClose" class="close h1 text-accent bold d">X</span>';
+echo '<span id="navMenuClose" class="close h1 text-accent bold">X</span>';
 echo '</div>';
 echo '</div>';
 echo '<a href="' . home_url() . '">';
