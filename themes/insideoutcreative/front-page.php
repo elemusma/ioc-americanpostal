@@ -9,7 +9,7 @@ if(have_rows('icons')):
 echo '<div class="container">';
 echo '<div class="row">';
     while(have_rows('icons')): the_row();
-    echo '<div class="col-lg-4 text-center mb-5">';
+    echo '<div class="col-md-4 col-6 text-center mb-5">';
 
     echo '<div class="position-relative icons d-flex align-items-center justify-content-center">';
         echo get_sub_field('icon');

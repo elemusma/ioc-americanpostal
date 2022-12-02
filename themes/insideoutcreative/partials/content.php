@@ -13,20 +13,20 @@ if($layout == 'Content Section'){
         $img = get_sub_field('image');
 
         if($bgImg){
-            echo '<section class="position-relative bg-attachment content-section ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'],'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+            echo '<section class="position-relative content-section ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'],'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
             // echo '</section>';
         } else {
-            echo '<section class="position-relative bg-attachment content-section ' . $classes . '" style="padding:150px 0;' . $style . '">';
+            echo '<section class="position-relative content-section ' . $classes . '" style="padding:150px 0;' . $style . '">';
         }
 
         echo '<div class="container">';
         echo '<div class="row row-content align-items-center justify-content-between">';
-        echo '<div class="col-md-4">';
+        echo '<div class="col-lg-4 col-md-8">';
             echo $content;
         echo '</div>';
 
         if($img):
-        echo '<div class="col-md-6">';
+        echo '<div class="col-lg-6">';
             echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100','style'=>'object-fit:cover;']);
         echo '</div>';
         endif;
@@ -47,10 +47,10 @@ if($layout == 'Content Section'){
     $posts = get_sub_field('posts');
 
     if($bgImg){
-        echo '<section class="position-relative bg-attachment ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
         // echo '</section>';
     } else {
-        echo '<section class="position-relative bg-attachment ' . $classes . '" style="padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative ' . $classes . '" style="padding:150px 0;' . $style . '">';
     }
 
     echo '<div class="container">';
@@ -63,6 +63,7 @@ if($layout == 'Content Section'){
 
         echo '<div class="row">';
         if( $posts ):
+            echo '<div class="col-12">';
             echo '<div class="posts-carousel owl-carousel owl-theme arrows-center">';
             foreach( $posts as $post ): 
                 // Setup this post for WP functions (variable must be named $post).
@@ -82,6 +83,7 @@ if($layout == 'Content Section'){
             endforeach;
             // Reset the global post object so that the rest of the page works correctly.
             wp_reset_postdata(); 
+            echo '</div>';
             echo '</div>';
             endif;
         echo '</div>';
@@ -144,10 +146,10 @@ if($layout == 'Content Section'){
     $content = get_sub_field('content');
 
     if($bgImg){
-        echo '<section class="position-relative bg-attachment ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
         // echo '</section>';
     } else {
-        echo '<section class="position-relative bg-attachment ' . $classes . '" style="padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative ' . $classes . '" style="padding:150px 0;' . $style . '">';
     }
 
     echo '<div class="container">';
@@ -168,10 +170,10 @@ if($layout == 'Content Section'){
     $content = get_sub_field('content');
 
     if($bgImg){
-        echo '<section class="position-relative bg-attachment ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
         // echo '</section>';
     } else {
-        echo '<section class="position-relative bg-attachment ' . $classes . '" style="padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative ' . $classes . '" style="padding:150px 0;' . $style . '">';
     }
 
     echo '<div class="container">';
@@ -183,11 +185,13 @@ if($layout == 'Content Section'){
 
     if(have_rows('individual_pdfs')): 
         echo '<div class="row">';
+        $individualPDFs=0;
             while(have_rows('individual_pdfs')): the_row();
             $image = get_sub_field('image');
             $volume = get_sub_field('volume');
             $issue = get_sub_field('issue');
             $link = get_sub_field('link');
+            $individualPDFs++;
 
             if( $link ): 
             $link_url = $link['url'];
@@ -195,7 +199,12 @@ if($layout == 'Content Section'){
             $link_target = $link['target'] ? $link['target'] : '_self';
             endif;
 
-            echo '<div class="col-lg-3">';
+            echo '<div class="col-lg-3 col-md-6 pb-5">';
+            // if($individualPDFs == 1){
+
+            // } else {
+            //     echo '<div class="pt-lg-5 pb-lg-5"></div>';
+            // }
             echo '<a class="" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">';
             echo wp_get_attachment_image($image,'full','',['class'=>'w-100 h-auto']);
             echo '</a>';
@@ -221,7 +230,7 @@ if($layout == 'Content Section'){
     $gallery = get_sub_field('inner_gallery');
 
     if($bgImg){
-        echo '<section class="position-relative bg-accent-dark-blue bg-attachment ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
         // echo '</section>';
     } else {
         echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="padding:150px 0;' . $style . '">';
@@ -263,7 +272,7 @@ if($layout == 'Content Section'){
     $classes = get_sub_field('classes');
 
     if($bgImg){
-        echo '<section class="position-relative bg-attachment ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
         // echo '</section>';
     } else {
         echo '<section class="position-relative ' . $classes . '" style="padding:150px 0;' . $style . '">';
@@ -283,13 +292,13 @@ if($layout == 'Content Section'){
         } else {
             echo '<div class="divider mt-5 mb-5"></div>';
         }
-            echo '<div class="col-md-2">';
+            echo '<div class="col-md-2 col-6">';
                 echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-auto']);
             echo '</div>';
 
             echo '<div class="col-md-1"></div>';
 
-            echo '<div class="col-md-8">';
+            echo '<div class="col-md-8 pt-md-0 pt-5">';
 
             echo '<h2>' . get_sub_field('title') . '</h2>';
 
@@ -344,7 +353,7 @@ if($layout == 'Content Section'){
                             echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
                         echo '</div>';
                         echo '</div>';
-                        echo '<div class="col-md-9 pt-md-0 pt-5">';
+                        echo '<div class="col-md-9 pl-lg-0 pl-md-5 pl-0 pt-md-0 pt-5">';
                         echo '<span class="h5 name bold text-accent-secondary text-uppercase">' . get_sub_field('name') . '</span><br>';
                         echo '<span class="h5 title text-uppercase">' . get_sub_field('title') . '</span><br>';
                         echo '<a href="mailto:' . get_sub_field('email') . '" target="_blank" class="h5 email text-accent bold">' . get_sub_field('email') . '</a>';
@@ -363,6 +372,13 @@ if($layout == 'Content Section'){
         echo '</section>';
 
         endwhile; endif;
+
+    endwhile; endif;
+} elseif($layout == 'Big Image'){
+    if(have_rows('big_image')): while(have_rows('big_image')): the_row();
+
+    $img = get_sub_field('image');
+    echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100']);
 
     endwhile; endif;
 }

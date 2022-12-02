@@ -34,10 +34,13 @@ ul.menu>li>a {
     font-family: "proxima_novabold";
 }
 
-.nav ul.menu>li>a {
-    color: white;
+.text-shadow.nav ul.menu>li>a {
     text-shadow: 0px 0px 5px var(--accent-secondary);
     text-transform: uppercase;
+}
+
+.text-white ul.menu li a {
+    color: white;
 }
 
 .current-menu-item>a,
@@ -184,7 +187,7 @@ ul.sub-menu li {
     white-space: nowrap;
 }
 
-ul.sub-menu li a {
+.text-white ul.sub-menu li a {
     color: white;
 }
 
