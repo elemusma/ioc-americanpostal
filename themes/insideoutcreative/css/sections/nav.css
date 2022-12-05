@@ -3,7 +3,7 @@ ul.menu li {
     position: relative;
 }
 
-ul.menu>li.menu-item-has-children {
+.nav ul.menu>li.menu-item-has-children {
     margin-right: 18px;
 }
 

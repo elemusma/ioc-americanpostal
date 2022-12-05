@@ -1,3 +1,53 @@
+/* start of hero contact buttons */
+.contact-btns ul.sub-menu {
+    top: 110px;
+}
+
+.contact-btns a {
+    background: var(--accent-primary);
+    color: white !important;
+    padding: 25px !important;
+    border-radius: 25px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s ease-in-out;
+}
+
+.contact-btns a:hover,
+.contact-btns ul.sub-menu li a {
+    background: var(--accent-secondary);
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+}
+
+.contact-btns ul.sub-menu li a:hover {
+    text-decoration: underline;
+}
+
+.contact-btns .dropdown-arrow {
+    right: 25px;
+    background: white;
+}
+
+.contact-btns>div,
+.contact-btns>div>ul,
+.contact-btns>div>ul>li,
+.contact-btns>div>ul>li>a {
+    height: 100%;
+}
+
+/* end of hero contact buttons */
+
+/* start of content */
+label.gfield_label {
+    color: var(--accent-secondary);
+    font-family: "proxima_novabold";
+}
+
+/* end of content */
+
 .content-testimonials li,
 .content-testimonials p {
     font-size: 125%;

@@ -121,6 +121,44 @@ the_content();
 endwhile;
 endif;
 
+if(have_rows('hero_contact_buttons')): while(have_rows('hero_contact_buttons')): the_row();
+$showButtons = get_sub_field('show_contact_buttons');
+
+if($showButtons == 'Yes'){
+    echo '<div class="row pt-4">';
+        echo '<div class="col-lg-3 col-md-6 contact-btns">';
+            wp_nav_menu(array(
+                'menu' => 'Postal Owner',
+                'menu_class'=>'menu list-unstyled mb-0'
+            ));
+        echo '</div>';
+        
+        echo '<div class="col-lg-3 col-md-6 contact-btns">';
+            wp_nav_menu(array(
+                'menu'=>'Tenant',
+                'menu_class'=>'menu list-unstyled mb-0'
+            ));
+        echo '</div>';
+    
+        echo '<div class="col-lg-3 col-md-6 contact-btns">';
+            wp_nav_menu(array(
+                'menu'=>'Broker',
+                'menu_class'=>'menu list-unstyled mb-0'
+            ));
+        echo '</div>';
+    
+        echo '<div class="col-lg-3 col-md-6 contact-btns">';
+            wp_nav_menu(array(
+                'menu'=>'Contact',
+                'menu_class'=>'menu list-unstyled mb-0'
+            ));
+        echo '</div>';
+
+    echo '</div>';
+}
+
+endwhile; endif;
+
 echo '</div>';
 echo '</div>';
 echo '</div>';

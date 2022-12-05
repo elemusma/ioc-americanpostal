@@ -99,6 +99,7 @@ blockquote {
   font-size: 90%;
 }
 
-.content-section p {
+.content-section p,
+p {
   font-size: 125%;
 }
