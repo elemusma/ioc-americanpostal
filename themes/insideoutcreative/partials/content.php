@@ -21,12 +21,12 @@ if($layout == 'Content Section'){
 
         echo '<div class="container">';
         echo '<div class="row row-content align-items-center justify-content-between">';
-        echo '<div class="col-lg-4 col-md-8">';
+        echo '<div class="col-lg-4">';
             echo $content;
         echo '</div>';
 
         if($img):
-        echo '<div class="col-lg-6">';
+        echo '<div class="col-lg-6 pt-lg-0 pt-5">';
             echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100','style'=>'object-fit:cover;']);
         echo '</div>';
         endif;
@@ -113,7 +113,7 @@ if($layout == 'Content Section'){
         echo '</div>';
 
         if(have_rows('testimonials')): 
-            echo '<div class="col-lg-4">';
+            echo '<div class="col-lg-4 pt-lg-0 pt-5">';
             echo '<div class="bg-accent-secondary pt-5 pb-5 pl-3 pr-3 text-white">';
             echo '<div class="testimonials-carousel owl-carousel owl-theme arrows-small">';
             while(have_rows('testimonials')): the_row();
@@ -199,7 +199,7 @@ if($layout == 'Content Section'){
             $link_target = $link['target'] ? $link['target'] : '_self';
             endif;
 
-            echo '<div class="col-lg-3 col-md-6 pb-5">';
+            echo '<div class="col-lg-3 col-6 pb-5">';
             // if($individualPDFs == 1){
 
             // } else {
@@ -292,13 +292,13 @@ if($layout == 'Content Section'){
         } else {
             echo '<div class="divider mt-5 mb-5"></div>';
         }
-            echo '<div class="col-md-2 col-6">';
+            echo '<div class="col-lg-2 col-6">';
                 echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-auto']);
             echo '</div>';
 
-            echo '<div class="col-md-1"></div>';
+            echo '<div class="col-lg-1"></div>';
 
-            echo '<div class="col-md-8 pt-md-0 pt-5">';
+            echo '<div class="col-lg-8 pt-lg-0 pt-5">';
 
             echo '<h2>' . get_sub_field('title') . '</h2>';
 

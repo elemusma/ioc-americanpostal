@@ -6,7 +6,7 @@ echo '<div class="row justify-content-between">';
 
 echo '<div class="col-lg-4 col-md-6 pb-5">';
 
-echo '<div class="d-flex">';
+echo '<div class="d-md-flex">';
 echo '<div>';
 echo '<a href="' . home_url() . '" class="d-inline-block pr-4">';
 
@@ -22,7 +22,7 @@ if($logoFooter){
 echo '</a>';
 echo '</div>';
 
-echo '<div>';
+echo '<div class="pt-md-0 pt-5">';
 echo get_field('website_message','options');
 echo '</div>';
 echo '</div>';

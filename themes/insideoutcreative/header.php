@@ -126,7 +126,7 @@ $showButtons = get_sub_field('show_contact_buttons');
 
 if($showButtons == 'Yes'){
     echo '<div class="row pt-4">';
-        echo '<div class="col-lg-3 col-md-6 contact-btns">';
+        echo '<div class="col-lg-3 contact-btns">';
             wp_nav_menu(array(
                 'menu' => 'Postal Owner',
                 'menu_class'=>'menu list-unstyled mb-0'
@@ -147,7 +147,7 @@ if($showButtons == 'Yes'){
             ));
         echo '</div>';
     
-        echo '<div class="col-lg-3 col-md-6 contact-btns">';
+        echo '<div class="col-lg-3 contact-btns">';
             wp_nav_menu(array(
                 'menu'=>'Contact',
                 'menu_class'=>'menu list-unstyled mb-0'

@@ -38,6 +38,26 @@
     height: 100%;
 }
 
+@media only screen and (max-width:991px) {
+    .contact-btns>div>ul>li>a {
+        height: auto;
+    }
+
+    .contact-btns ul.sub-menu li a {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width:991px) and (min-width:767px) {
+    .contact-btns ul.sub-menu {
+        display: flex;
+    }
+
+    .contact-btns ul.sub-menu li {
+        width: 50%;
+    }
+}
+
 /* end of hero contact buttons */
 
 /* start of content */
