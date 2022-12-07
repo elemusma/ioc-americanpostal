@@ -6,7 +6,7 @@ echo '<div class="row justify-content-between">';
 
 echo '<div class="col-lg-4 col-md-6 pb-5">';
 
-echo '<div class="d-md-flex">';
+echo '<div class="">';
 echo '<div>';
 echo '<a href="' . home_url() . '" class="d-inline-block pr-4">';
 
@@ -14,15 +14,15 @@ $logo = get_field('logo','options');
 $logoFooter = get_field('logo_footer','options'); 
 
 if($logoFooter){
-    echo wp_get_attachment_image($logoFooter['id'],'full',"",['class'=>'w-100 h-auto']); 
+    echo wp_get_attachment_image($logoFooter['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:200px;']); 
 } elseif($logo) {
-    echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto']);
+    echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:200px;']);
 }
 
 echo '</a>';
 echo '</div>';
 
-echo '<div class="pt-md-0 pt-5">';
+echo '<div class="pt-5">';
 echo get_field('website_message','options');
 echo '</div>';
 echo '</div>';
