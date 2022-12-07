@@ -58,6 +58,20 @@ echo '<div id="map" style="height:750px;width:100%;"></div>';
                 <a href="https://goo.gl/maps/rh5YjKNnJmeby4oV7" target="_blank">Click Here for Address</a>
                 </div>`
             },
+            {
+                location:{lat: 46.783065193803616, lng: -98.56428315915521},
+                content:`<div class="pt-4 pb-3">
+                <p>218 1st St<br>Ypsilanti, ND 58497</p>
+                <a href="https://goo.gl/maps/h7NnBaDSxFXYx1fP6" target="_blank">Click Here for Address</a>
+                </div>`
+            },
+            {
+                location:{lat: 41.10141193, lng: -80.77462499},
+                content:`<div class="pt-4 pb-3">
+                <p>6000 Mahoning Ave<br>Youngstown OH 44515</p>
+                <a href="https://goo.gl/maps/7td1bvopJx3WBMXy8" target="_blank">Click Here for Address</a>
+                </div>`
+            },
         ]
 
         // for loop
