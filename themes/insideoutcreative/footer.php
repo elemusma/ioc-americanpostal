@@ -22,7 +22,7 @@ if($logoFooter){
 echo '</a>';
 echo '</div>';
 
-echo '<div class="pt-5">';
+echo '<div class="pt-5 s">';
 echo get_field('website_message','options');
 echo '</div>';
 echo '</div>';
