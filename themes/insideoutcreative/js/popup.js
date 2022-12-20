@@ -5,32 +5,35 @@ let openModalArrowFunction = (elem) => {
     elemContent = document.querySelector('.modal-content.' + elemID);
     elemContent.classList.add('activate-modal');
 
-    elemClose.addEventListener('click', function(){
+    elemClose.addEventListener('click', function () {
         elemContent.classList.remove('activate-modal');
     });
-    elemOverlay.addEventListener('click', function(){
+    elemOverlay.addEventListener('click', function () {
         elemContent.classList.remove('activate-modal');
     });
 }
 
 let openModalBtn = document.querySelectorAll('.open-modal');
 
-for ( i = 0; i < openModalBtn.length; i++ ) {
+for (i = 0; i < openModalBtn.length; i++) {
     openModalBtn[i].addEventListener('click', openModal);
+    openModalBtn[i].addEventListener('mouseenter', openModal);
+
     function openModal() {
         openModalArrowFunction(this);
     }
+
     function closeModal() {
         closeModalArrowFunction(this);
     }
 }
 
-document.onkeydown = function(evt) {
+document.onkeydown = function (evt) {
     evt = evt || window.event;
     if (evt.keyCode == 27) {
         modalContent = document.querySelectorAll('.modal-content');
-        for ( i = 0; i < modalContent.length; i++){
-            if(modalContent[i].classList.contains('activate-modal')){
+        for (i = 0; i < modalContent.length; i++) {
+            if (modalContent[i].classList.contains('activate-modal')) {
                 modalContent[i].classList.remove('activate-modal');
             }
         }

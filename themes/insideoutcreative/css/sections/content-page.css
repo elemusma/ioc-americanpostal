@@ -68,6 +68,7 @@ label.gfield_label {
 
 /* end of content */
 
+/* start of testimonials */
 .content-testimonials li,
 .content-testimonials p {
     font-size: 125%;
@@ -88,6 +89,19 @@ label.gfield_label {
     top: 5px;
     left: -30px;
 }
+
+/* end of testimonials */
+
+/* start of team page */
+.team-modal .bg-content {
+    background: var(--accent-primary);
+}
+
+.team-modal .bg-content {
+    color: white;
+}
+
+/* end of team page */
 
 /* @media screen and (min-width:768px){
     .row-services-content:nth-child(odd){

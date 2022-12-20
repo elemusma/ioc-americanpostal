@@ -284,6 +284,7 @@ if($layout == 'Content Section'){
         while(have_rows('sections')): the_row();
         $img = get_sub_field('thumbnail');
         $content = get_sub_field('content');
+        $link = get_sub_field('link');
         $sectionsCounter++;
 
         echo '<div class="row">';
@@ -293,7 +294,16 @@ if($layout == 'Content Section'){
             echo '<div class="divider mt-5 mb-5"></div>';
         }
             echo '<div class="col-lg-2 col-6">';
-                echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-auto']);
+            if($link):
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                $link_target = $link['target'] ? $link['target'] : '_self';
+                echo '<a class="" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">';
+            endif;
+            echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-auto']);
+            if($link):
+                echo '</a>';
+            endif;
             echo '</div>';
 
             echo '<div class="col-lg-1"></div>';
@@ -344,11 +354,13 @@ if($layout == 'Content Section'){
             echo '</div>';
 
             if(have_rows('team_member')): 
+                $teamCounter=0;
                 while(have_rows('team_member')): the_row();
+                $teamCounter++;
                 echo '<div class="row pt-5 pb-5">';
                         $headshot = get_sub_field('headshot');
                         echo '<div class="col-md-3">';
-                        echo '<div class="d-inline-block">';
+                        echo '<div class="d-inline-block team-member-' . $teamCounter . ' open-modal" id="team-member-' . $teamCounter . '">';
                             echo wp_get_attachment_image(384,'full','',['class'=>'position-absolute','style'=>'top:-25px;left:-9px;height:200px;width:200px;']);
                             echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
                         echo '</div>';
@@ -364,6 +376,25 @@ if($layout == 'Content Section'){
                         
                         echo '</div>';
                         echo '</div>';
+
+                        echo '<div class="modal-content team-member-' . $teamCounter . ' position-fixed w-100 h-100 z-3 team-modal">';
+                        echo '<div class="bg-overlay"></div>';
+                        echo '<div class="bg-content">';
+                        echo '<div class="bg-content-inner">';
+                        echo '<div class="close" id="">X</div>';
+                        echo '<div class="d-md-flex">';
+                        echo '<div class="pr-5">';
+                        echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
+                        echo '</div>';
+                        echo '<div>';
+                        echo get_sub_field('popup_bio');
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+
+                        echo '</div>';
+                        echo '</div>';
+
                     endwhile;
 
          endif;

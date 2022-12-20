@@ -4,7 +4,7 @@ echo '<section class="pt-5">';
 echo '<div class="container">';
 echo '<div class="row justify-content-between">';
 
-echo '<div class="col-lg-4 col-md-6 pb-5">';
+echo '<div class="col-lg-5 col-md-6 pb-5">';
 
 echo '<div class="">';
 echo '<div>';
@@ -27,7 +27,7 @@ echo get_field('website_message','options');
 echo '</div>';
 echo '</div>';
 
-echo '<p class="pt-5">Copyright &copy; 2022 American Postal Infrastructure</p>';
+// echo '<p class="pt-5">Copyright &copy; 2022 American Postal Infrastructure</p>';
 
 
 echo '</div>';
