@@ -100,10 +100,10 @@ if($layout == 'Content Section'){
     $bgImg = get_sub_field('background_image');
 
     if($bgImg){
-        echo '<section class="position-relative bg-attachment" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;">';
+        echo '<section class="position-relative bg-attachment" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;" id="content-testimonials">';
         // echo '</section>';
     } else {
-        echo '<section class="position-relative bg-attachment" style="padding:150px 0;">';
+        echo '<section class="position-relative bg-attachment" style="padding:150px 0;" id="content-testimonials">';
     }
 
     echo '<div class="container">';
