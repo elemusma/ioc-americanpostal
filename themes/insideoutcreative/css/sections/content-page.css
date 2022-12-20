@@ -90,6 +90,12 @@ label.gfield_label {
     left: -30px;
 }
 
+/* makes all the same height */
+.testimonials-carousel .owl-item {
+    height: 510px;
+    overflow: scroll;
+}
+
 /* end of testimonials */
 
 /* start of team page */
