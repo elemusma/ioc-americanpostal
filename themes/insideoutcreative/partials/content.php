@@ -356,11 +356,12 @@ if($layout == 'Content Section'){
             if(have_rows('team_member')): 
                 $teamCounter=0;
                 while(have_rows('team_member')): the_row();
+                $popup = sanitize_title_with_dashes(get_sub_field('name'));
                 $teamCounter++;
                 echo '<div class="row pt-5 pb-5">';
                         $headshot = get_sub_field('headshot');
                         echo '<div class="col-md-3">';
-                        echo '<div class="d-inline-block team-member-' . $teamCounter . ' open-modal" id="team-member-' . $teamCounter . '">';
+                        echo '<div class="d-inline-block team-member-' . $popup . ' open-modal" id="team-member-' . $popup . '">';
                             echo wp_get_attachment_image(384,'full','',['class'=>'position-absolute','style'=>'top:-25px;left:-9px;height:200px;width:200px;']);
                             echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
                         echo '</div>';
@@ -377,7 +378,7 @@ if($layout == 'Content Section'){
                         echo '</div>';
                         echo '</div>';
 
-                        echo '<div class="modal-content team-member-' . $teamCounter . ' position-fixed w-100 h-100 z-3 team-modal">';
+                        echo '<div class="modal-content team-member-' . $popup . ' position-fixed w-100 h-100 z-3 team-modal">';
                         echo '<div class="bg-overlay"></div>';
                         echo '<div class="bg-content">';
                         echo '<div class="bg-content-inner">';
