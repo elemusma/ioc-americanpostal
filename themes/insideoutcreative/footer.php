@@ -27,7 +27,9 @@ echo get_field('website_message','options');
 echo '</div>';
 echo '</div>';
 
-echo '<p class="pt-5 small">Copyright &copy; 2022 American Postal Infrastructure</p>';
+echo '<div class="small">';
+echo '<p class="pt-5">Copyright &copy; 2022 American Postal Infrastructure</p>';
+echo '</div>';
 
 
 echo '</div>';
