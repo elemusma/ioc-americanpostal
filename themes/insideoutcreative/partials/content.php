@@ -21,7 +21,7 @@ if($layout == 'Content Section'){
 
         echo '<div class="container">';
         echo '<div class="row row-content align-items-center justify-content-between">';
-        echo '<div class="col-lg-4">';
+        echo '<div class="col-lg-4 ' . get_sub_field('col_classes') . '" style="' . get_sub_field('col_style') . '">';
             echo $content;
         echo '</div>';
 
