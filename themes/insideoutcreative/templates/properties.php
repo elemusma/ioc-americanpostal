@@ -3,7 +3,9 @@
  * Template Name: Properties
  */
 get_header();
-echo '<div id="map" style="height:750px;width:100%;"></div>';
+// echo '<div id="map" style="height:750px;width:100%;"></div>';
+
+echo '<img src="https://insideoutcreative.io/wp-content/uploads/2022/12/American-Postal-Properties-Map.jpg" alt="" width="100%" height="auto">';
 
 ?>
 

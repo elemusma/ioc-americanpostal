@@ -1,12 +1,12 @@
 <?php
 echo '<footer>';
 echo '<section class="pt-5">';
-echo '<div class="container">';
+echo '<div class="container-fluid">';
 echo '<div class="row justify-content-between">';
 
 echo '<div class="col-lg-5 col-md-6 pb-5">';
 
-echo '<div class="">';
+echo '<div class="d-md-flex">';
 echo '<div>';
 echo '<a href="' . home_url() . '" class="d-inline-block pr-4">';
 
@@ -14,20 +14,20 @@ $logo = get_field('logo','options');
 $logoFooter = get_field('logo_footer','options'); 
 
 if($logoFooter){
-    echo wp_get_attachment_image($logoFooter['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:200px;']); 
+    echo wp_get_attachment_image($logoFooter['id'],'full',"",['class'=>'h-auto','style'=>'width:200px;']); 
 } elseif($logo) {
-    echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:200px;']);
+    echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'h-auto','style'=>'width:200px;']);
 }
 
 echo '</a>';
 echo '</div>';
 
-echo '<div class="pt-5">';
+echo '<div class="small">';
 echo get_field('website_message','options');
 echo '</div>';
 echo '</div>';
 
-// echo '<p class="pt-5">Copyright &copy; 2022 American Postal Infrastructure</p>';
+echo '<p class="pt-5 small">Copyright &copy; 2022 American Postal Infrastructure</p>';
 
 
 echo '</div>';
