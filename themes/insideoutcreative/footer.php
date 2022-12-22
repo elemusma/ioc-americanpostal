@@ -6,7 +6,7 @@ echo '<div class="row justify-content-between">';
 
 echo '<div class="col-lg-5 col-md-6 pb-5">';
 
-echo '<div class="d-md-flex">';
+echo '<div class="d-md-flex align-items-center">';
 echo '<div>';
 echo '<a href="' . home_url() . '" class="d-inline-block pr-4">';
 
