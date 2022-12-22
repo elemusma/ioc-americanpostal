@@ -361,10 +361,14 @@ if($layout == 'Content Section'){
                 echo '<div class="row pt-5 pb-5">';
                         $headshot = get_sub_field('headshot');
                         echo '<div class="col-md-3">';
-                        echo '<div class="d-inline-block team-member-' . $popup . ' open-modal" id="team-member-' . $popup . '">';
+                        if(get_sub_field('popup_bio')){
+                            echo '<div class="d-inline-block team-member-' . $popup . ' open-modal" id="team-member-' . $popup . '">';
+                        }
                             echo wp_get_attachment_image(384,'full','',['class'=>'position-absolute','style'=>'top:-25px;left:-9px;height:200px;width:200px;']);
                             echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
-                        echo '</div>';
+                            if(get_sub_field('popup_bio')){
+                                echo '</div>';
+                            }
                         echo '</div>';
                         echo '<div class="col-md-9 pl-lg-0 pl-md-5 pl-0 pt-md-0 pt-5">';
                         echo '<span class="h5 name bold text-accent-secondary text-uppercase">' . get_sub_field('name') . '</span><br>';
@@ -378,23 +382,25 @@ if($layout == 'Content Section'){
                         echo '</div>';
                         echo '</div>';
 
-                        echo '<div class="modal-content team-member-' . $popup . ' position-fixed w-100 h-100 z-3 team-modal">';
-                        echo '<div class="bg-overlay"></div>';
-                        echo '<div class="bg-content">';
-                        echo '<div class="bg-content-inner">';
-                        echo '<div class="close" id="">X</div>';
-                        echo '<div class="d-md-flex">';
-                        echo '<div class="pr-5">';
-                        echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
-                        echo '</div>';
-                        echo '<div>';
-                        echo get_sub_field('popup_bio');
-                        echo '</div>';
-                        echo '</div>';
-                        echo '</div>';
+                        if(get_sub_field('popup_bio')){
+                            echo '<div class="modal-content team-member-' . $popup . ' position-fixed w-100 h-100 z-3 team-modal">';
+                            echo '<div class="bg-overlay"></div>';
+                            echo '<div class="bg-content">';
+                            echo '<div class="bg-content-inner">';
+                            echo '<div class="close" id="">X</div>';
+                            echo '<div class="d-md-flex">';
+                            echo '<div class="pr-5">';
+                            echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
+                            echo '</div>';
+                            echo '<div>';
+                            echo get_sub_field('popup_bio');
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
 
-                        echo '</div>';
-                        echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
 
                     endwhile;
 
