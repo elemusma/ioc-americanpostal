@@ -3,7 +3,13 @@
     height: 85vh;
     object-fit: cover;
 }
+
 body:not(.home) .img-hero {
     min-height: 200px;
     height: 30vh;
+}
+
+.hero p.h2 {
+    text-align: justify;
+    line-height: 2;
 }

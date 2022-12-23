@@ -14,20 +14,21 @@
 .btn-main,
 .btn a {
     background: var(--accent-primary);
-    padding: 15px 45px;
+    padding: 15px 25px;
     transition: all .25s ease-in-out;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 75px;
     color: white;
     font-family: "proxima_novabold";
 }
 
 .btn-main {
     display: inline-block;
+    font-size: 25px;
 }
 
 .btn a {
-    padding: 15px 45px !important;
+    padding: 15px 25px !important;
     margin-left: 25px;
     text-shadow: none !important;
     color: white !important;

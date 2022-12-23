@@ -60,14 +60,6 @@
 
 /* end of hero contact buttons */
 
-/* start of content */
-label.gfield_label {
-    color: var(--accent-secondary);
-    font-family: "proxima_novabold";
-}
-
-/* end of content */
-
 /* start of testimonials */
 .content-testimonials li,
 .content-testimonials p {

@@ -19,15 +19,15 @@ if($layout == 'Content Section'){
             echo '<section class="position-relative content-section ' . $classes . '" style="padding:150px 0;' . $style . '">';
         }
 
-        echo '<div class="container">';
+        echo '<div class="container-fluid">';
         echo '<div class="row row-content align-items-center justify-content-between">';
-        echo '<div class="col-lg-4 ' . get_sub_field('col_classes') . '" style="' . get_sub_field('col_style') . '">';
+        echo '<div class="col-lg-6 ' . get_sub_field('col_classes') . '" style="' . get_sub_field('col_style') . '">';
             echo $content;
         echo '</div>';
 
         if($img):
-        echo '<div class="col-lg-6 pt-lg-0 pt-5">';
-            echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100','style'=>'object-fit:cover;']);
+        echo '<div class="col-lg-6 pt-lg-0 pt-5 text-center">';
+            echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100','style'=>'object-fit:cover;max-width:500px;']);
         echo '</div>';
         endif;
 
@@ -236,9 +236,9 @@ if($layout == 'Content Section'){
         echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="padding:150px 0;' . $style . '">';
     }
 
-    echo '<div class="container">';
-    echo '<div class="row">';
-    echo '<div class="col-12">';
+    echo '<div class="container-fluid">';
+    echo '<div class="row justify-content-center">';
+    echo '<div class="col-lg-10">';
 
     if($gallery):
     echo '<div class="posts-carousel owl-carousel owl-theme arrows-center">';

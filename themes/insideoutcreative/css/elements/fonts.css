@@ -19,7 +19,12 @@ h2 {
 
   h1,
   .h1 {
-    font-size: 75px;
+    font-size: 5vw;
+  }
+
+  .big-text,
+  .big-text {
+    font-size: 2.75vw;
   }
 }
 
@@ -61,6 +66,10 @@ a.text-black:hover {
   line-height: 1;
 }
 
+.lh-2 {
+  line-height: 2;
+}
+
 .ls-1 {
   letter-spacing: 1em;
 }
@@ -99,7 +108,16 @@ blockquote {
   font-size: 90%;
 }
 
-.content-section p,
+.content-section p {
+  /* font-size: 125%; */
+  font-size: 2vw;
+  line-height: 1.75;
+}
+
 p {
   font-size: 125%;
+}
+
+.content-section h2 {
+  font-size: 2.5vw;
 }

@@ -1,0 +1,17 @@
+footer #menu-footer a:before {
+    content: "";
+    background: url('https://insideoutcreative.io/wp-content/uploads/2022/12/Red-Arrow-Right-Fancy.png');
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 12.5px;
+    left: -10px;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+}
+
+footer #menu-footer a:hover:before {
+    opacity: 1;
+}

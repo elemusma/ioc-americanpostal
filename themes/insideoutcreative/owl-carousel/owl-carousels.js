@@ -27,7 +27,7 @@ $('.products-carousel').owlCarousel({
 $('.posts-carousel').owlCarousel({
     // center: true,
     loop: false,
-    margin: 10,
+    margin: 0,
     nav: true,
     dots: false,
     // stagePadding:170,
@@ -54,7 +54,7 @@ $('.posts-carousel').owlCarousel({
 $('.testimonials-carousel').owlCarousel({
     // center: true,
     loop: false,
-    margin: 10,
+    margin: 0,
     nav: true,
     dots: false,
     // stagePadding:170,

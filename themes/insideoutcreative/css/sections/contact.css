@@ -18,22 +18,34 @@ input.gform_button.button:hover {
   border-color: var(--accent-secondary);
 }
 
+input,
+textarea,
+select {
+  background: #fafafa;
+  border: none;
+}
+
+.gfield_label {
+  color: var(--accent-secondary);
+  font-family: "proxima_novabold";
+}
+
 /* .gform_footer.top_label {
   margin-bottom: -90px !important;
 } */
 
-input,
+/* input,
 textarea {
   box-shadow: inset 1px 1px 8px #eaeaea !important;
   border: none;
-}
+} */
 
 input[type=file] {
   box-shadow: none !important;
 }
 
 /* custom form */
-input,
+/* input,
 textarea {
   width: 100%;
   border: 1px solid #eaeaea;
@@ -65,4 +77,4 @@ button[type=submit]:hover {
 
 input:focus-visible {
   outline-color: var(--accent-secondary);
-}
+} */
