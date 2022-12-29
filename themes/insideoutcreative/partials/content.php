@@ -19,7 +19,7 @@ if($layout == 'Content Section'){
             echo '<section class="position-relative content-section ' . $classes . '" style="padding:150px 0;' . $style . '">';
         }
 
-        echo '<div class="container-fluid">';
+        echo '<div class="container-fluid pl-lg-5 pr-lg-5">';
         echo '<div class="row row-content align-items-center justify-content-between">';
         echo '<div class="col-lg-6 ' . get_sub_field('col_classes') . '" style="' . get_sub_field('col_style') . '">';
             echo $content;
