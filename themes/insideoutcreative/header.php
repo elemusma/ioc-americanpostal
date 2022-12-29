@@ -53,10 +53,12 @@ echo '<div class="h-100 d-flex align-items-center justify-content-center">';
 echo '<div class="position-absolute w-100 h-100 bg-accent-secondary" style="top:0;left:0;clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
 "></div>';
 
-wp_nav_menu(array(
-    'menu' => 'primary',
-    'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0 text-white text-shadow'
-    )); 
+echo '<div class="menu-primary-container-parent w-100 justify-content-around">';
+    wp_nav_menu(array(
+        'menu' => 'primary',
+        'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-around mb-0 text-white text-shadow'
+    ));
+echo '</div>';
 
 echo '</div>';
 echo '</div>';
@@ -80,10 +82,12 @@ echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','sty
 
 echo '</a>';
 echo '</div>';
-wp_nav_menu(array(
-'menu' => 'primary',
-'menu_class'=>'menu list-unstyled mb-0'
-)); 
+
+    wp_nav_menu(array(
+        'menu' => 'primary',
+        'menu_class'=>'menu list-unstyled mb-0'
+    )); 
+
 echo '</div>';
 echo '</div>';
 echo '</div>';
