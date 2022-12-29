@@ -30,7 +30,7 @@ ul.menu li {
 ul.menu>li>a {
     padding: 9px;
     font-weight: 900;
-    /* font-size: 14px; */
+    font-size: 24px;
     font-family: "proxima_novabold";
     color: var(--accent-secondary)
 }
