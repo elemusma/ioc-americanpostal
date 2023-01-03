@@ -206,7 +206,7 @@ if($layout == 'Content Section'){
             //     echo '<div class="pt-lg-5 pb-lg-5"></div>';
             // }
             echo '<a class="" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">';
-            echo wp_get_attachment_image($image,'full','',['class'=>'w-100 h-auto']);
+            echo wp_get_attachment_image($image,'full','',['class'=>'w-100','style'=>'height:320px;object-fit:cover;']);
             echo '</a>';
             echo '<h2 class="text-accent-secondary mb-0 pt-4">' . $volume . '</h2>';
             echo '<h3>' . $issue . '</h3>';
