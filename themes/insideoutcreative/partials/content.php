@@ -154,7 +154,7 @@ if($layout == 'Content Section'){
 
     echo '<div class="container">';
         echo '<div class="row">';
-        echo '<div class="col-lg-8">';
+        echo '<div class="col-lg-8 ' . get_sub_field('col_classes') . ' style=""' . get_sub_field('col_style') . '">';
             echo $content;
         echo '</div>';
         echo '</div>';
