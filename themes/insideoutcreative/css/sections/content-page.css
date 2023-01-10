@@ -83,9 +83,20 @@
 }
 
 /* makes all the same height */
-.testimonials-carousel .owl-item {
+/* .testimonials-carousel .owl-item {
     height: 510px;
     overflow: scroll;
+} */
+
+/* .testimonials-carousel .owl-item {
+    display: flex;
+    align-items: center;
+} */
+
+.testimonials-carousel .owl-item {
+    height: 650px;
+    display: flex;
+    align-items: center;
 }
 
 /* end of testimonials */

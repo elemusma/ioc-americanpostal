@@ -419,6 +419,43 @@ if($layout == 'Content Section'){
     echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100']);
 
     endwhile; endif;
+} elseif ($layout == 'Testimonials'){
+    if(have_rows('testimonials_group')): while(have_rows('testimonials_group')): the_row();
+
+    echo '<section class="position-relative bg-accent-secondary" style="padding:50px 0;">';
+    echo '<div class="container">';
+    echo '<div class="testimonials-carousel owl-carousel owl-theme arrows-center">';
+    if(have_rows('testimonials')): while(have_rows('testimonials')): the_row();
+    $image = get_sub_field('image');
+    echo '<div class="row align-items-center">';
+
+    echo '<div class="col-lg-6">';
+
+    echo '<div class="position-relative">';
+    echo wp_get_attachment_image(717,'full','',['class'=>'position-absolute','style'=>'object-fit:contain;width: 520px;
+    height: 520px;
+    top: -60px;
+    left: 10px;']);
+    echo wp_get_attachment_image($image['id'],'full','',['class'=>'m-auto','style'=>'width:400px;height:400px;margin-left:50px;object-fit:cover;']);
+    echo '</div>';
+
+    echo '</div>';
+
+    echo '<div class="col-lg-6">';
+    echo '<div class="font-italic text-white">';
+    echo get_sub_field('content');
+    echo '</div>';
+    echo '<span class="text-white"><strong>- ' . get_sub_field('name') . '</strong></span>';
+    echo '</div>';
+
+    echo '</div>';
+
+    endwhile; endif;
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
+
+    endwhile; endif;
 }
 
 endwhile; endif;
