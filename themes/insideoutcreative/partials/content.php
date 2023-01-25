@@ -237,6 +237,14 @@ if($layout == 'Content Section'){
     }
 
     echo '<div class="container">';
+
+    echo '<div class="row">';
+        echo '<div class="col-12 text-center pb-5">';
+            echo $content;
+        echo '</div>';
+
+        echo '</div>';
+
     echo '<div class="row justify-content-center">';
     echo '<div class="col-12">';
 
