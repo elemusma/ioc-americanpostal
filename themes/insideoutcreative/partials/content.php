@@ -230,7 +230,7 @@ if($layout == 'Content Section'){
     $gallery = get_sub_field('inner_gallery');
 
     if($bgImg){
-        echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg,'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
+        echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'],'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
         // echo '</section>';
     } else {
         echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="padding:150px 0;' . $style . '">';
