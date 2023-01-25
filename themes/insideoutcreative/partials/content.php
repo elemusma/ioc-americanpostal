@@ -228,6 +228,7 @@ if($layout == 'Content Section'){
     $style = get_sub_field('style');
     $classes = get_sub_field('classes');
     $gallery = get_sub_field('inner_gallery');
+    $content = get_sub_field('content');
 
     if($bgImg){
         echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'],'full') . ');background-size:cover;padding:150px 0;' . $style . '">';
