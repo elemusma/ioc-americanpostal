@@ -236,9 +236,9 @@ if($layout == 'Content Section'){
         echo '<section class="position-relative bg-accent-dark-blue ' . $classes . '" style="padding:150px 0;' . $style . '">';
     }
 
-    echo '<div class="container-fluid">';
+    echo '<div class="container">';
     echo '<div class="row justify-content-center">';
-    echo '<div class="col-lg-10">';
+    echo '<div class="col-12">';
 
     if($gallery):
     echo '<div class="posts-carousel owl-carousel owl-theme arrows-center">';
@@ -249,8 +249,11 @@ if($layout == 'Content Section'){
                     echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100','style'=>'height:600px;object-fit:cover;']);
                     echo '</a>';
                 echo '</div>';
-                echo '<div class="text-white pt-5">';
-                echo '<span class="h5">' . $image['title'] . '</span>';
+                echo '<div class="pt-5">';
+                echo '<span class="text-gray h2 d-block">' . $image['title'] . '</span>';
+                echo '<span class="text-white d-block">' . $image['caption'] . '</span>';
+                // echo '<a href="' . get_the_permalink() . '" class="text-gray pt-5 h2 d-block">' . get_the_title() . '</a>';
+
                 echo '</div>';
                 echo '</div>';
             endforeach;
