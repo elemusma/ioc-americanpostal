@@ -13,6 +13,10 @@ body.nav-open {
   overflow: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 #body-overlay {
   opacity: 0;
   width: 100%;
