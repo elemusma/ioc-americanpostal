@@ -11,7 +11,7 @@ button.owl-prev {
   outline: none !important;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1360px) {
 
   .arrows-center button.owl-next,
   .arrows-center button.owl-prev {

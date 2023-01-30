@@ -24,11 +24,13 @@
     img.img-main {
         width: 250px !important;
         height: 250px !important;
+        margin-left: 55px !important;
     }
 
     img.img-border {
         width: 329px !important;
+        height: 329px !important;
         left: 15px !important;
-        top: -35px !important;
+        top: 60px !important;
     }
 }

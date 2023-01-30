@@ -443,19 +443,20 @@ if($layout == 'Content Section'){
 
     echo '<div class="col-lg-6 col-img-testimonials pt-md-0 pb-md-0" style="padding-top:50px;">';
 
-    echo '<div class="position-relative" style="padding-top:100px;padding-bottom:100px;">';
+    echo '<div class="position-relative d-inline-block" style="padding-top:100px;padding-bottom:100px;">';
     echo wp_get_attachment_image(717,'full','',['class'=>'position-absolute img-border','style'=>'
     object-fit:contain;
-    width: 520px;
-    height: 520px;
-    top: -60px;
-    left: 10px;']);
-    echo wp_get_attachment_image($image['id'],'full','',['class'=>'m-auto img-main','style'=>'width:400px;height:400px;margin-left:50px;object-fit:cover;']);
+    width: 460px;
+    height: 470px;
+    top: 40px;
+    left: 15px;']);
+    echo wp_get_attachment_image($image['id'],'full','',['class'=>'img-main',
+    'style'=>'width:350px;height:350px;margin-left:70px;object-fit:cover;']);
     echo '</div>';
 
     echo '</div>';
 
-    echo '<div class="col-lg-6">';
+    echo '<div class="col-lg-6 col-testimonial-content" style="">';
     echo '<div class="font-italic text-white">';
     echo get_sub_field('content');
     echo '</div>';

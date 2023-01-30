@@ -61,7 +61,7 @@ $('.testimonials-carousel').owlCarousel({
     autoplay: false,
     autoplayTimeout: 2500,
     autoplayHoverPause: false,
-    autoHeight: false,
+    autoHeight: true,
     animateIn: 'fadeIn',
     animateOut: 'fadeOut',
     navText: ["<img src='https://insideoutcreative.io/wp-content/uploads/2022/11/Arrow-Left-Fancy.png' />", "<img src='https://insideoutcreative.io/wp-content/uploads/2022/11/Arrow-Right-Fancy.png' />"],
