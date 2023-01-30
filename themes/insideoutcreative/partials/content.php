@@ -255,7 +255,7 @@ if($layout == 'Content Section'){
                 echo '<div>';
                 echo '<div class="img-hover overflow-h">';
                 echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set" data-title="' . $image['title'] . '">';
-                    echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100','style'=>'height:600px;object-fit:cover;']);
+                    echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 img-gallery','style'=>'height:600px;object-fit:cover;']);
                     echo '</a>';
                 echo '</div>';
                 echo '<div class="pt-5">';
@@ -382,7 +382,7 @@ if($layout == 'Content Section'){
                                 echo '</div>';
                             }
                         echo '</div>';
-                        echo '<div class="col-md-9 pl-lg-0 pl-md-5 pl-0 pt-md-0 pt-5">';
+                        echo '<div class="col-md-9 pl-lg-0 pl-md-5 pt-md-0 pt-5">';
                         echo '<span class="h5 name bold text-accent-secondary text-uppercase">' . get_sub_field('name') . '</span><br>';
                         echo '<span class="h5 title text-uppercase">' . get_sub_field('title') . '</span><br>';
                         echo '<a href="mailto:' . get_sub_field('email') . '" target="_blank" class="h5 email text-accent bold">' . get_sub_field('email') . '</a>';
@@ -434,21 +434,23 @@ if($layout == 'Content Section'){
 } elseif ($layout == 'Testimonials'){
     if(have_rows('testimonials_group')): while(have_rows('testimonials_group')): the_row();
 
-    echo '<section class="position-relative bg-accent-secondary" style="padding:50px 0;">';
+    echo '<section class="position-relative bg-accent-secondary" style="padding:100px 0;">';
     echo '<div class="container">';
     echo '<div class="testimonials-carousel owl-carousel owl-theme arrows-center">';
     if(have_rows('testimonials')): while(have_rows('testimonials')): the_row();
     $image = get_sub_field('image');
     echo '<div class="row align-items-center">';
 
-    echo '<div class="col-lg-6">';
+    echo '<div class="col-lg-6 col-img-testimonials pt-md-0 pb-md-0" style="padding-top:50px;">';
 
-    echo '<div class="position-relative">';
-    echo wp_get_attachment_image(717,'full','',['class'=>'position-absolute','style'=>'object-fit:contain;width: 520px;
+    echo '<div class="position-relative" style="padding-top:100px;padding-bottom:100px;">';
+    echo wp_get_attachment_image(717,'full','',['class'=>'position-absolute img-border','style'=>'
+    object-fit:contain;
+    width: 520px;
     height: 520px;
     top: -60px;
     left: 10px;']);
-    echo wp_get_attachment_image($image['id'],'full','',['class'=>'m-auto','style'=>'width:400px;height:400px;margin-left:50px;object-fit:cover;']);
+    echo wp_get_attachment_image($image['id'],'full','',['class'=>'m-auto img-main','style'=>'width:400px;height:400px;margin-left:50px;object-fit:cover;']);
     echo '</div>';
 
     echo '</div>';

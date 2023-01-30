@@ -110,14 +110,21 @@ blockquote {
 
 .content-section p {
   /* font-size: 125%; */
-  font-size: 2vw;
   line-height: 1.75;
 }
 
-p {
-  font-size: 125%;
-}
 
-.content-section h2 {
-  font-size: 2.5vw;
+
+@media only screen and (min-width:992px) {
+  .content-section p {
+    font-size: 2vw;
+  }
+
+  .content-section h2 {
+    font-size: 2.5vw;
+  }
+
+  p {
+    font-size: 150%;
+  }
 }

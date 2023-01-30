@@ -12,3 +12,23 @@
     background: rgb(26, 56, 129);
     background: radial-gradient(circle, rgba(26, 56, 129, 1) 65%, rgba(0, 18, 41, 1) 100%);
 }
+
+@media only screen and (max-width:767px) {
+    .img-gallery {
+        height: 295px !important;
+    }
+}
+
+
+@media only screen and (max-width:767px) {
+    img.img-main {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    img.img-border {
+        width: 329px !important;
+        left: 15px !important;
+        top: -35px !important;
+    }
+}
