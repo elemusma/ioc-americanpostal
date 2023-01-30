@@ -117,6 +117,16 @@
     color: white;
 }
 
+@media only screen and (max-width:767px) {
+    img.img-team-headshot {
+        margin-left: 25px;
+    }
+
+    img.img-team-frame {
+        left: 15px !important;
+    }
+}
+
 /* end of team page */
 
 /* @media screen and (min-width:768px){

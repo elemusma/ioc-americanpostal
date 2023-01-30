@@ -376,8 +376,8 @@ if($layout == 'Content Section'){
                         if(get_sub_field('popup_bio')){
                             echo '<div class="d-inline-block team-member-' . $popup . ' open-modal" id="team-member-' . $popup . '">';
                         }
-                            echo wp_get_attachment_image(384,'full','',['class'=>'position-absolute','style'=>'top:-25px;left:-9px;height:200px;width:200px;']);
-                            echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1','style'=>'width:150px;height:150px;object-fit:cover;']);
+                            echo wp_get_attachment_image(384,'full','',['class'=>'position-absolute img-team-frame','style'=>'top:-25px;left:-9px;height:200px;width:200px;']);
+                            echo wp_get_attachment_image($headshot,'full','',['class'=>'position-relative z-1 img-team-headshot','style'=>'width:150px;height:150px;object-fit:cover;']);
                             if(get_sub_field('popup_bio')){
                                 echo '</div>';
                             }
