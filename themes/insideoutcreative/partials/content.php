@@ -253,7 +253,7 @@ if($layout == 'Content Section'){
     echo '<div class="posts-carousel owl-carousel owl-theme arrows-center">';
             foreach( $gallery as $image ): 
                 echo '<div>';
-                echo '<div class="img-hover overflow-h">';
+                echo '<div class="">';
                 echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set" data-title="' . $image['title'] . '">';
                     echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 img-gallery','style'=>'height:600px;object-fit:cover;']);
                     echo '</a>';
