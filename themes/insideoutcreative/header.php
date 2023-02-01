@@ -6,14 +6,23 @@
 <?php 
 
 if(get_field('header', 'options')) { the_field('header', 'options'); }
+if(get_field('individual_body_code')){
+    echo get_field('individual_body_code');
+}
 
 if(get_field('custom_css')) { 
 ?> 
 <style>
 <?php the_field('custom_css'); ?>
 </style>
+
 <?php 
 }
+
+if(get_field('individual_header_code')){
+    echo get_field('individual_header_code');
+}
+
 wp_head(); 
 ?>
 </head>

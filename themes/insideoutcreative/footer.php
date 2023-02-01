@@ -84,7 +84,9 @@ echo '</section>';
 // echo '</div>';
 
 echo '</footer>';
-
+if(get_field('individual_footer_code')){
+    echo get_field('individual_footer_code');
+}
 if(get_field('footer', 'options')) { the_field('footer', 'options'); }
 
 wp_footer();
