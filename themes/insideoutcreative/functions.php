@@ -78,7 +78,12 @@ function american_postal_stylesheets_footer() {
 	
 	if(is_single()){
 		wp_enqueue_script('blog-js', get_theme_file_uri('/js/blog.js'));
-		}
+	}
+
+	if(get_field('individual_footer_code')){
+		echo get_field('individual_footer_code');
+	}
+
 	}
 	
 add_action('get_footer', 'american_postal_stylesheets_footer');
