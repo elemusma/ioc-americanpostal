@@ -246,18 +246,20 @@ if($layout == 'Content Section'){
 
         echo '</div>';
 
-    echo '<div class="row justify-content-center">';
+        
+        if($gallery):
+    echo '<div class="row justify-content-center row-gallery">';
     echo '<div class="col-12">';
-
-    if($gallery):
     echo '<div class="posts-carousel owl-carousel owl-theme arrows-center">';
             foreach( $gallery as $image ): 
                 echo '<div>';
+                // echo '<div class="text-center">';
                 echo '<div class="">';
                 echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set" data-title="' . $image['title'] . '">';
-                    echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 img-gallery','style'=>'height:600px;object-fit:cover;']);
-                    echo '</a>';
+                echo wp_get_attachment_image($image['id'],'full','',['class'=>'w-100 img-gallery','style'=>'height:550px;object-fit:cover;']);
+                echo '</a>';
                 echo '</div>';
+                // echo '</div>';
                 echo '<div class="pt-5">';
                 echo '<span class="text-gray h2 d-block">' . $image['title'] . '</span>';
                 echo '<span class="text-white d-block">' . $image['caption'] . '</span>';
@@ -267,10 +269,10 @@ if($layout == 'Content Section'){
                 echo '</div>';
             endforeach;
             echo '</div>';
+            echo '</div>';
+            echo '</div>';
     endif;
 
-    echo '</div>';
-    echo '</div>';
     echo '</div>';
 
 

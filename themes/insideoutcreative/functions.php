@@ -55,7 +55,14 @@ function american_postal_stylesheets_footer() {
 		wp_enqueue_script('jquery-min', get_theme_file_uri('/owl-carousel/jquery.min.js'));
 		wp_enqueue_script('owl-carousel', get_theme_file_uri('/owl-carousel/owl.carousel.min.js'));
 		wp_enqueue_script('owl-carousel-custom', get_theme_file_uri('/owl-carousel/owl-carousels.js'));
+		// wp_enqueue_script('gravity-forms-custom', get_theme_file_uri('/js/gravity-forms.js'));
 	}
+	
+	if(is_page(40) || is_page(422) || is_page(461) || is_page(418) || is_page(416) || is_page(420)){
+		wp_enqueue_script('gravity-forms-custom', get_theme_file_uri('/js/gravity-forms.js'));
+
+	}
+
 
 	wp_enqueue_script('lightbox-min-js', get_theme_file_uri('/lightbox/lightbox.min.js'));
 	wp_enqueue_script('lightbox-js', get_theme_file_uri('/lightbox/lightbox.js'));

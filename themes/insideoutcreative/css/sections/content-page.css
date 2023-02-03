@@ -129,6 +129,21 @@
 
 /* end of team page */
 
+/* start of gallery */
+/* @media only screen and (max-width:991px) {
+    .row-gallery {
+        padding: 0 100px;
+    }
+} */
+
+@media only screen and (min-width:992px) {
+    .row-gallery {
+        padding: 0 150px;
+    }
+}
+
+/* end of gallery */
+
 /* @media screen and (min-width:768px){
     .row-services-content:nth-child(odd){
         flex-direction: row-reverse;       
