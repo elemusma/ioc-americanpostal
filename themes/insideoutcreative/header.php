@@ -107,7 +107,7 @@ echo '</header>';
 echo '<section class="hero position-relative">';
 
 $globalPlaceholderImg = get_field('global_placeholder_image','options');
-if(is_page()){
+if(is_page() ){
 if(has_post_thumbnail()){
 the_post_thumbnail('full', array('class' => 'w-100 h-100 bg-img position-absolute'));
 } else {
@@ -116,6 +116,7 @@ echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-
 } else {
 echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
 }
+
 echo '<div class="position-absolute w-100 h-100 bg-white" style="opacity:.95;"></div>';
 
 
